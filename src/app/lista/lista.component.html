@@ -1,0 +1,21 @@
+<div class="card-container">
+
+    <div fxLayout="row wrap">
+
+        <div class="card" fxFlex="32%"  *ngFor="let trad of trades">
+            <span>{{trad.stock}}</span>
+
+            <canvas id="myChart"></canvas>
+
+            <div class="icons">
+                <mat-icon>favorite_border</mat-icon>
+                &nbsp;
+                <mat-icon>notifications_none</mat-icon>
+                &nbsp;
+                <mat-icon>edit</mat-icon>
+            </div>
+        </div>
+
+    </div>
+
+</div>

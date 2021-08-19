@@ -1,0 +1,71 @@
+svg.material-icons {
+    height: 24px;
+    width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+}
+
+.card svg.material-icons path {
+    fill: #888;
+}
+
+.card-container {
+    background-color: #ececec;
+    margin: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    width: 95%;
+}
+
+.card {
+    margin: 5px 10px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+.card span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card canvas {
+    height: 100px;
+    width: 100%;
+}
+
+.card .icons {
+    height: 18px;
+    float: right;
+}
+
+.card mat-icon {
+    font-size: 21px;
+}
+
+.card-container .card:not(:last-child) {
+    margin-right: 0;
+}
+
+
+.card-container .card:not(.highlight-card) {
+    cursor: pointer;
+}
+
+.card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+:visited, .card:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.card:hover {
+    color: #125699;
+}
