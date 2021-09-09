@@ -16,31 +16,53 @@ svg.material-icons:not(:last-child) {
     margin: auto;
     border: 1px solid #eee;
     border-radius: 4px;
-    padding: 10px;
-    width: 95%;
+    padding: 5px;
+    width: 90%;
 }
 
 .card {
-    margin: 5px 10px;
+    margin: 5px 0 5px 10px;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #eee;
+    border: 1px solid rgb(214, 214, 214);
     background-color: #fff;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 }
+
 .card span {
     font-weight: bold;
     font-size: 18px;
 }
 
-.card canvas {
-    height: 100px;
-    width: 100%;
+mat-form-field {
+    padding: 10px;
 }
+
+
+/* 
+.card canvas {
+  height: 100px;
+  width: 100%;
+} */
 
 .card .icons {
     height: 18px;
     float: right;
+}
+
+.active .heart-icon {
+    fill: red;
+    animation: beat .3s ease-out;
+}
+
+.card .values {
+    float: right;
+    display: block;
+}
+
+.card .values span {
+    font-size: 13px;
 }
 
 .card mat-icon {
@@ -51,7 +73,6 @@ svg.material-icons:not(:last-child) {
     margin-right: 0;
 }
 
-
 .card-container .card:not(.highlight-card) {
     cursor: pointer;
 }
@@ -61,11 +82,34 @@ svg.material-icons:not(:last-child) {
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
 
-:visited, .card:hover {
+:visited,
+.card:hover {
     color: #1976d2;
     text-decoration: none;
 }
 
 .card:hover {
     color: #125699;
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+::ng-deep .mat-form-field-flex>.mat-form-field-infix {
+    padding: 0.4em 0px !important;
+    margin-bottom: 0.2em;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+    top: -1.5em;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1em) scale(0.76);
 }

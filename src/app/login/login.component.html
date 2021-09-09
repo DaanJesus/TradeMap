@@ -1,0 +1,47 @@
+<app-particles></app-particles>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form [formGroup]="formRegister">
+            <h1>Criar conta</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>ou utilize seu email</span>
+            <input type="text" placeholder="Name" formControlName="name" />
+            <input type="email" placeholder="Email" formControlName="email" />
+            <input type="password" placeholder="Password" formControlName="password" />
+            <button (click)="register()">Cadastrar</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form [formGroup]="formLogin">
+            <h1>Login</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>ou utilize sua conta</span>
+            <input type="email" placeholder="Email" formControlName="email" />
+            <input type="password" placeholder="Password" formControlName="password" />
+            <a href="#">Esqueci a minha senha</a>
+            <button (click)="login()">Entrar</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Bem vindo de volta!</h1>
+                <p>Entre e continue informado sobre o mercado e suas variações!</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Opa... Beleza?</h1>
+                <p>Registre-se para ter acesso as informações da bolsa e aproveitar 100% do que o site tem para oferecer.</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>

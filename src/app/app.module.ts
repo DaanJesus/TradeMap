@@ -1,3 +1,5 @@
+import { Interceptor } from './service/interceptor.module';
+import { LoginService } from './service/login.service';
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
@@ -23,13 +25,18 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ListaComponent } from './lista/lista.component'
 import { FavoritosComponent } from './favoritos/favoritos.component'
-import { FlexLayoutModule } from '@angular/flex-layout'
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginComponent } from './login/login.component'
+import { AuthGuard } from './service/auth-guard';
+import { ParticlesComponent } from './particles/particles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    LoginComponent,
+    ParticlesComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +62,12 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatDatepickerModule,
     MatNativeDateModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    Interceptor
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

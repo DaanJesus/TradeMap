@@ -11,7 +11,8 @@ export class HttpOptionsService {
   public getHttpOptions(): any {
     let _headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Accept: 'application/json'
+      Accept: 'application/json',
+      
     })
 
     let httpOption: any = {}

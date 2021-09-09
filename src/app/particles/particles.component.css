@@ -1,0 +1,10 @@
+#particles-js {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background-size: cover
+}
+
+#particles-js {
+    opacity: 0.6;
+}

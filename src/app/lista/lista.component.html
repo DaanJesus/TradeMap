@@ -1,15 +1,44 @@
 <div class="card-container">
 
-    <div fxLayout="row wrap">
+    <mat-form-field appearance="outline">
+        <mat-label>Buscar stock</mat-label>
+        <input (blur)="searchStock($event.target.value)" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
 
-        <div class="card" fxFlex="32%"  *ngFor="let trad of trades">
-            <span>{{trad.stock}}</span>
+    <div fxLayout="row wrap" style="width: 100%;">
 
-            <canvas id="myChart"></canvas>
+        <div class="card" fxFlex="32.6%" *ngFor="let trade of trades; let i = index">
+
+            <span>{{trade.stock}}</span>
+
+            <div class="values">
+                <span>{{trade.price}} </span>
+                <span style="color:darkgray;"> | </span>
+                <span>
+
+          {{trade.variation}}%
+
+          <svg attr.id="positive{{i}}" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 100 100">
+            <polygon fill="#1bdad7" points="50 5, 5 90, 50 70, 95 90" />
+          </svg>
+
+          <svg attr.id="negative{{i}}" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 100 100">
+            <polygon fill="#F01A25" points="50 90, 5 15, 50 30, 95 15" />
+          </svg>
+
+        </span>
+            </div>
+
+            <canvas attr.id="myChart{{i}}" height="40" width="140"></canvas>
 
             <div class="icons">
-                <mat-icon>favorite_border</mat-icon>
-                &nbsp;
+                <svg attr.id="favorite{{i}}" class="heart-icon" (click)="setFavorite(trade, i)" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 60 60">
+          <path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+	          c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
+          	c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
+	          C52.216,18.553,51.97,16.611,51.911,16.242z" />
+        </svg> &nbsp;
                 <mat-icon>notifications_none</mat-icon>
                 &nbsp;
                 <mat-icon>edit</mat-icon>
